@@ -1,0 +1,361 @@
+{
+	"id": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+	"name": "AuthApiCollection",
+	"description": "",
+	"order": [
+		"96f75717-1522-a2e8-08ae-bd09e8f913ff",
+		"ba203c3f-b914-8994-bfb5-5ad11227b88c",
+		"80e7bc40-d55b-3fad-2a9f-24a4fc9bd6ae",
+		"d3508b64-4248-c87b-6ab1-3535fb57c9a1",
+		"1ccdcc1b-af22-d8be-d437-e07001b416ae",
+		"e5941f60-e596-a7e8-e8d5-14801d722d72",
+		"209920d6-1dbe-f648-7cba-6ba82ee95625",
+		"3a8bc57f-4116-a8fc-c494-9e15ef7f8e0f",
+		"9dbad4e1-a6db-05dd-0674-a2ac2fae7d84"
+	],
+	"folders": [
+		{
+			"id": "4aff8c53-2cb5-08c5-d229-5ada5c469d7b",
+			"name": "Anonymous Requests",
+			"description": "",
+			"order": [
+				"56c60fcb-6319-497f-fb71-d32a1d3840f6",
+				"05b8d617-1579-9948-f078-36896c9d5fa9",
+				"917e45c9-88c9-e9fa-b972-582355aa0c19"
+			],
+			"owner": 0,
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e"
+		}
+	],
+	"timestamp": 1457704978529,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "05b8d617-1579-9948-f078-36896c9d5fa9",
+			"headers": "",
+			"url": "{{host}}{{api-url}}/Register",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "Email",
+					"value": "{{user-to-add-email}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Password",
+					"value": "{{user-to-add-password}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ConfirmPassword",
+					"value": "{{user-to-add-password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459974824515,
+			"name": "api/Account/Register",
+			"description": "",
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+			"responses": []
+		},
+		{
+			"id": "1ccdcc1b-af22-d8be-d437-e07001b416ae",
+			"headers": "Authorization: Bearer {{auth-token}}\n",
+			"url": "{{host}}{{api-url}}/ChangePassword",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "OldPassword",
+					"value": "{{user-to-add-password}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "NewPassword",
+					"value": "{{user-to-add-password}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ConfirmPassword",
+					"value": "{{user-to-add-password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459975279481,
+			"name": "api/Account/ChangePassword",
+			"description": "",
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+			"responses": []
+		},
+		{
+			"id": "209920d6-1dbe-f648-7cba-6ba82ee95625",
+			"headers": "Authorization: Bearer {{auth-token}}\n",
+			"url": "{{host}}{{api-url}}/AddExternalLogin",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "ExternalAccessToken",
+					"value": "{{external-token}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459975209344,
+			"name": "api/Account/AddExternalLogin",
+			"description": "",
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+			"responses": []
+		},
+		{
+			"id": "3a8bc57f-4116-a8fc-c494-9e15ef7f8e0f",
+			"headers": "Authorization: Bearer {{auth-token}}\n",
+			"url": "{{host}}{{api-url}}/RemoveLogin",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "LoginProvider",
+					"value": "{{auth-provider-local}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ProviderKey",
+					"value": "{{user-to-add-email}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459975061715,
+			"name": "api/Account/RemoveLogin",
+			"description": "",
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+			"responses": []
+		},
+		{
+			"id": "56c60fcb-6319-497f-fb71-d32a1d3840f6",
+			"headers": "",
+			"url": "{{host}}{{api-url}}/ExternalLogins?returnUrl=%2F&generateState=true",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459974832716,
+			"name": "api/Account/ExternalLogins",
+			"description": "",
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+			"responses": []
+		},
+		{
+			"id": "80e7bc40-d55b-3fad-2a9f-24a4fc9bd6ae",
+			"headers": "Authorization: Bearer {{auth-token}}\n",
+			"url": "{{host}}{{api-url}}/ManageInfo?returnUrl=%2F&generateState=true",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459975105767,
+			"name": "api/Account/ManageInfo",
+			"description": "",
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+			"responses": []
+		},
+		{
+			"id": "917e45c9-88c9-e9fa-b972-582355aa0c19",
+			"headers": "",
+			"url": "{{host}}/Token",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "{{user-to-add-email}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{user-to-add-password}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459975359969,
+			"name": "Token",
+			"description": "",
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+			"responses": []
+		},
+		{
+			"id": "96f75717-1522-a2e8-08ae-bd09e8f913ff",
+			"headers": "Authorization: Bearer {{auth-token}}\n",
+			"url": "{{host}}{{api-url}}/ExternalLogin",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459975112203,
+			"name": "api/Account/ExternalLogin",
+			"description": "",
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+			"responses": []
+		},
+		{
+			"id": "9dbad4e1-a6db-05dd-0674-a2ac2fae7d84",
+			"headers": "Authorization: Bearer {{auth-token}}\n",
+			"url": "{{host}}{{api-url}}/RegisterExternal",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "Email",
+					"value": "{{user-to-add-email}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459974958599,
+			"name": "api/Account/RegisterExternal",
+			"description": "",
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+			"responses": []
+		},
+		{
+			"id": "ba203c3f-b914-8994-bfb5-5ad11227b88c",
+			"headers": "Authorization: Bearer {{auth-token}}\n",
+			"url": "{{host}}{{api-url}}/UserInfo",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459975109204,
+			"name": "api/Account/UserInfo",
+			"description": "",
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+			"responses": []
+		},
+		{
+			"id": "d3508b64-4248-c87b-6ab1-3535fb57c9a1",
+			"headers": "Authorization: Bearer {{auth-token}}\n",
+			"url": "{{host}}{{api-url}}/Logout",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459975156478,
+			"name": "api/Account/Logout",
+			"description": "",
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+			"responses": []
+		},
+		{
+			"id": "e5941f60-e596-a7e8-e8d5-14801d722d72",
+			"headers": "Authorization: Bearer {{auth-token}}\n",
+			"url": "{{host}}{{api-url}}/SetPassword",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "NewPassword",
+					"value": "{{user-to-add-password}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ConfirmPassword",
+					"value": "{{user-to-add-password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1459975166102,
+			"name": "api/Account/SetPassword",
+			"description": "",
+			"collectionId": "2ddbde87-2bd1-7706-cf0b-997823535b7e",
+			"responses": []
+		}
+	]
+}
