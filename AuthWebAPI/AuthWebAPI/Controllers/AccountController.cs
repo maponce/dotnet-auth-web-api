@@ -20,7 +20,7 @@ using AuthWebAPI.Results;
 namespace AuthWebAPI.Controllers
 {
     [Authorize]
-    [RoutePrefix("api/Account")]
+    [RoutePrefix("api/auth/Account")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
@@ -51,7 +51,7 @@ namespace AuthWebAPI.Controllers
 
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
 
-        // GET api/Account/UserInfo
+        // GET api/auth/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("UserInfo")]
         public UserInfoViewModel GetUserInfo()
@@ -66,7 +66,7 @@ namespace AuthWebAPI.Controllers
             };
         }
 
-        // POST api/Account/Logout
+        // POST api/auth/Account/Logout
         [Route("Logout")]
         public IHttpActionResult Logout()
         {
@@ -74,7 +74,7 @@ namespace AuthWebAPI.Controllers
             return Ok();
         }
 
-        // GET api/Account/ManageInfo?returnUrl=%2F&generateState=true
+        // GET api/auth/Account/ManageInfo?returnUrl=%2F&generateState=true
         [Route("ManageInfo")]
         public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
         {
@@ -114,7 +114,7 @@ namespace AuthWebAPI.Controllers
             };
         }
 
-        // POST api/Account/ChangePassword
+        // POST api/auth/Account/ChangePassword
         [Route("ChangePassword")]
         public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)
         {
@@ -135,7 +135,7 @@ namespace AuthWebAPI.Controllers
             return Ok();
         }
 
-        // POST api/Account/SetPassword
+        // POST api/auth/Account/SetPassword
         [Route("SetPassword")]
         public async Task<IHttpActionResult> SetPassword(SetPasswordBindingModel model)
         {
@@ -155,7 +155,7 @@ namespace AuthWebAPI.Controllers
             return Ok();
         }
 
-        // POST api/Account/AddExternalLogin
+        // POST api/auth/Account/AddExternalLogin
         [Route("AddExternalLogin")]
         public async Task<IHttpActionResult> AddExternalLogin(AddExternalLoginBindingModel model)
         {
@@ -196,7 +196,7 @@ namespace AuthWebAPI.Controllers
             return Ok();
         }
 
-        // POST api/Account/RemoveLogin
+        // POST api/auth/Account/RemoveLogin
         [Route("RemoveLogin")]
         public async Task<IHttpActionResult> RemoveLogin(RemoveLoginBindingModel model)
         {
@@ -226,7 +226,7 @@ namespace AuthWebAPI.Controllers
             return Ok();
         }
 
-        // GET api/Account/ExternalLogin
+        // GET api/auth/Account/ExternalLogin
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
         [AllowAnonymous]
@@ -283,7 +283,7 @@ namespace AuthWebAPI.Controllers
             return Ok();
         }
 
-        // GET api/Account/ExternalLogins?returnUrl=%2F&generateState=true
+        // GET api/auth/Account/ExternalLogins?returnUrl=%2F&generateState=true
         [AllowAnonymous]
         [Route("ExternalLogins")]
         public IEnumerable<ExternalLoginViewModel> GetExternalLogins(string returnUrl, bool generateState = false)
@@ -324,7 +324,7 @@ namespace AuthWebAPI.Controllers
             return logins;
         }
 
-        // POST api/Account/Register
+        // POST api/auth/Account/Register
         [AllowAnonymous]
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
@@ -347,7 +347,7 @@ namespace AuthWebAPI.Controllers
             return Ok();
         }
 
-        // POST api/Account/RegisterExternal
+        // POST api/auth/Account/RegisterExternal
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("RegisterExternal")]
