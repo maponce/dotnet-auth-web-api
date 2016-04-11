@@ -25,6 +25,10 @@ namespace AuthWebAPI
                 routeTemplate: "api/auth/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // Enable CORS
+            var cors = new System.Web.Http.Cors.EnableCorsAttribute(AppSettingsHelper.GetValue<string>("", () => string.Empty), "*", "POST, GET");
+            config.EnableCors(cors);
         }
     }
 }
